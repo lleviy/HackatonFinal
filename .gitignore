@@ -1,0 +1,8 @@
+secrets.json
+*.sqlite3
+venv/
+staticfiles/
+.idea/
+__pycache__
+celerybeat-schedule.*
+*/migrations

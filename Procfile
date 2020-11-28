@@ -1,0 +1,1 @@
+web: env PYTHONUNBUFFERED=true honcho start -f Procfile.real

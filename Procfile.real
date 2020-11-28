@@ -1,0 +1,3 @@
+web: gunicorn minenergo.wsgi --log-file -
+worker: celery -A minenergo worker --loglevel=info
+celery_beat: celery -A minenergo.celery beat --loglevel=info

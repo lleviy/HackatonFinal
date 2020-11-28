@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h1>Пользователи приложения</h1>
+{% for user in object_list %}
+<p>{{ user.email }}
+    {% for group in user.groups.all %}
+{{ group }}
+{%endfor%}
+<a href="#">Редактировать</a>
+<a href="#">Удалить</a></p>
+{% endfor %}
+{% endblock content %}

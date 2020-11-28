@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h1>Мои пространства</h1>
+    <a href="{% url 'spaces:space_create' %}">
+    <span class="oi oi-plus" title="icon name" aria-hidden="true"></span></a>
+    <div class="list-group list-group-flush">
+    {% for space in spaces %}
+        <li class="list-group-item">
+        <div class="row">
+    <a href="{% url 'spaces:space' space.id %}" >{{ space.name }}</a>
+            <div class="ml-auto">
+    <a href="{% url 'spaces:space_edit' space.id %}">
+            <span class="oi oi-pencil" title="icon name" aria-hidden="true"></span></a>
+    <a href="{% url 'spaces:space_delete' space.id %}">
+        <span class="oi oi-delete" title="icon name" aria-hidden="true"></span></a>
+        </div>
+        </div>
+        </li>
+{% endfor %}
+    </div>
+{% endblock content %}

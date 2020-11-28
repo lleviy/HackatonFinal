@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<body style="font-family:'Helvetica Neue', Arial; font-size: 16px;">
+</body>
+<div class="row">
+    <div class="col-4">
+        <div class="list-group" id="list-tab" role="tablist">
+            <a class="list-group-item list-group-item-action active" id="map" data-toggle="list" href="#map"
+               data-ajax-target="{% url 'spaces:get_map' %}">Карта потребления</a>
+            <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#list-home"
+               role="tab" aria-controls="home">Оборот розничной торговли</a>
+            <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list"
+               href="#list-profile" role="tab" aria-controls="profile">Продукция сельского хозяйства</a>
+            <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list"
+               href="#list-messages" role="tab" aria-controls="messages">Среднедушевые денежные доходы</a>
+            <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list"
+               href="#list-settings" role="tab" aria-controls="settings">Потребительские расходы в среднем на душу
+                населения</a>
+            <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list"
+               href="#list-settings" role="tab" aria-controls="val">Валовой региональный продукт</a>
+        </div>
+    </div>
+    <div class="col-8">
+        <div id="content"></div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+<script type="text/javascript" src="{% static "js/fusioncharts/fusioncharts.js" %}"></script>
+<script type="text/javascript" src="{% static "js/fusioncharts/themes/fusioncharts.theme.fusion.js" %}"></script>
+<script type="text/javascript" src="{% static "js/fusioncharts/themes/fusioncharts.theme.gammel.js" %}"></script>
+<script src="{% static 'js/showMap.js' %}" type="text/javascript"></script>
+{% endblock scripts%}

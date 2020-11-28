@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if messages %}
+        {% for message in messages %}
+            <div>
+<!--                | means OR operator-->
+                <strong>{{message|safe}}</strong>
+            </div>
+        {% endfor %}
+    {% endif %}
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="file1">Загрузите файл</label>
+        <input type="file" id="file1" name="file">
+        <small>Разрешены только .xls файлы</small>
+        <button type="submit" class="btn btn-primary">Подтвердить</button>
+    </form>
+{% endblock content %}
