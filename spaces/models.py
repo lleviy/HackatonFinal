@@ -4,7 +4,7 @@ from accounts.models import User
 
 
 class Region(models.Model):
-    id = models.CharField(max_length=4, primary_key=True)
+    id = models.CharField(max_length=5, primary_key=True)
     name = models.CharField(max_length=50)
 
     def __str__(self):
