@@ -5,4 +5,3 @@ staticfiles/
 .idea/
 __pycache__
 celerybeat-schedule.*
-*/migrations
