@@ -1,14 +1,20 @@
 import json
 import os
 
+from django.core.exceptions import ObjectDoesNotExist
 from pyexcel_xls import get_data as xls_get
 
 from minenergo.settings import BASE_DIR
 from spaces.models import Region, ElectricityConsumption, Space
 
 
-def parse_excel_into_consumption_objects(file, request, space_id=None):
-    space = Space.objects.get(pk=space_id)
+def parse_excel_into_consumption_objects(file, request, space_id=1):
+    try:
+        space = Space.objects.get(pk=space_id)
+    except ObjectDoesNotExist:
+        initial = Space.objects.create(name="Default", owner=None)
+        space = Space.objects.get(pk=space_id)
+
     data = list(xls_get(file).items())[0][1]
     regions = Region.objects.all()
 

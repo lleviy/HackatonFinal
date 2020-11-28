@@ -12,7 +12,7 @@ class Region(models.Model):
 
 
 class Space(models.Model):
-    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=80)
 
     def __str__(self):

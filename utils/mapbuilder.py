@@ -7,7 +7,7 @@ from spaces.fusioncharts import FusionCharts
 from spaces.models import ElectricityConsumption
 
 
-def build_map(request, space_id=None):
+def build_map(request, space_id=1):
     year = request.GET.get('year', datetime.datetime.now().year - 1)
 
     # Chart data is passed to the `dataSource` parameter, as dict, in the form of key-value pairs.

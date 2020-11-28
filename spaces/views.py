@@ -129,15 +129,11 @@ def consumption_upload(request):
 
 
 def index(request):
-    fusionMap = build_map(request)
+    return render(request, 'index.html')
 
-    # returning complete JavaScript and HTML code, which is used to generate map in the browsers.
-    return render(request, 'index.html',
-                  {'output': fusionMap.render()})
 
 def get_map(request):
     fusionMap = build_map(request)
 
-    # returning complete JavaScript and HTML code, which is used to generate map in the browsers.
     return render(request, 'spaces/map.html',
                   {'output': fusionMap.render()})
