@@ -10,13 +10,13 @@
             <a class="list-group-item list-group-item-action active" id="map" data-toggle="list" href="#map"
                data-ajax-target="{% url 'spaces:get_map' %}">Карта потребления</a>
             <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#list-home"
-               role="tab" aria-controls="home">Оборот розничной торговли</a>
+               data-ajax-target="{% url 'spaces:oborot' %}">Оборот розничной торговли</a>
             <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list"
                href="#list-profile" role="tab" aria-controls="profile">Продукция сельского хозяйства</a>
             <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list"
                href="#list-messages" data-ajax-target="{% url 'spaces:average_income' %}">Среднедушевые денежные доходы</a>
             <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list"
-               href="#list-settings" role="tab" aria-controls="settings">Потребительские расходы в среднем на душу
+               href="#list-settings" data-ajax-target="{% url 'spaces:potreb' %}">Потребительские расходы в среднем на душу
                 населения</a>
             <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list"
                href="#list-settings" role="tab" aria-controls="val">Валовой региональный продукт</a>

@@ -122,6 +122,17 @@ class AverageIncomeView(View):
     def get(self, request):
         return render(request, self.template_name)
 
+class OborotView(View):
+    template_name = 'plots/oborot.html'
+    def get(self, request):
+        return render(request, self.template_name)
+
+
+class PotrebView(View):
+    template_name = 'plots/potreb.html'
+    def get(self, request):
+        return render(request, self.template_name)
+
 def consumption_upload(request):
     # declaring template
     template = "spaces/consumption_upload.html"
