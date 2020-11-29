@@ -10,6 +10,7 @@ from utils.excelparser import parse_excel_into_consumption_objects
 from utils.mapbuilder import build_map
 from .forms import SpaceForm
 from .models import Space
+from api.apps import ApiConfig
 
 
 def check_ownership(request, owner):
@@ -109,6 +110,17 @@ class SpaceDeleteView(LoginRequiredMixin, DeleteView):
             raise Http404
         return obj
 
+
+class EnergyPredictionView(View):
+    template_name = 'spaces/energy_predictions.html'
+    def get(self, request):
+        data = ApiConfig.energy_predictions
+        return render(request, self.template_name, {'data': data})
+
+class AverageIncomeView(View):
+    template_name = 'plots/average_income.html'
+    def get(self, request):
+        return render(request, self.template_name)
 
 def consumption_upload(request):
     # declaring template
